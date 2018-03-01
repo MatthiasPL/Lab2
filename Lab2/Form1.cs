@@ -16,5 +16,28 @@ namespace Lab2
         {
             InitializeComponent();
         }
+
+        #region MojeMetody
+        //Obsługa błędów- niewypełnione pole
+        private bool CzyPoleWypelnione(TextBox poleTekstowe)
+        {
+            if (poleTekstowe.Text == "")
+            {
+                errorProviderPolTekstowych.SetError(poleTekstowe,"Pole zostało niewypełnione");
+                return false;
+            }
+            errorProviderPolTekstowych.SetError(poleTekstowe, "");
+            return true;
+        }
+        #endregion
+
+        private void buttonDodaj_Click(object sender, EventArgs e)
+        {
+            //Nie trzeba &&, lepiej to zrobić &
+            if (CzyPoleWypelnione(textBoxImie) & CzyPoleWypelnione(textBoxNazwisko))
+            {
+
+            }
+        }
     }
 }

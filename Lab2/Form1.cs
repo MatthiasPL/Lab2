@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -62,7 +63,33 @@ namespace Lab2
                 uzytkownik = textBoxImie.Text + " " + textBoxNazwisko.Text + " " + numericUpDownWiek.Value;
                 DodajUzytkownikaDoListy(uzytkownik);
                 uzytkownik = "";
-                
+            }
+        }
+
+        private void textBoxImie_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar)&&!char.IsLetter('-')&&e.KeyChar!=127){
+                e.Handled = true;
+            }
+            if (e.KeyChar == 13)
+            {
+                textBoxNazwisko.Focus();
+            }
+        }
+
+        private void textBoxNazwisko_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                numericUpDownWiek.Focus();
+            }
+        }
+
+        private void numericUpDownWiek_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                buttonDodaj_Click(sender, e);
             }
         }
     }

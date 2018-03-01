@@ -112,6 +112,7 @@
             0,
             0,
             0});
+            this.numericUpDownWiek.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numericUpDownWiek_KeyPress);
             // 
             // textBoxNazwisko
             // 
@@ -119,6 +120,7 @@
             this.textBoxNazwisko.Name = "textBoxNazwisko";
             this.textBoxNazwisko.Size = new System.Drawing.Size(100, 20);
             this.textBoxNazwisko.TabIndex = 3;
+            this.textBoxNazwisko.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNazwisko_KeyPress);
             // 
             // labelNazwisko
             // 
@@ -135,6 +137,7 @@
             this.textBoxImie.Name = "textBoxImie";
             this.textBoxImie.Size = new System.Drawing.Size(100, 20);
             this.textBoxImie.TabIndex = 1;
+            this.textBoxImie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxImie_KeyPress);
             // 
             // labelImie
             // 

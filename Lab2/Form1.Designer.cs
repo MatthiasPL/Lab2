@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBoxUzytkownik = new System.Windows.Forms.GroupBox();
+            this.buttonUsun = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.buttonDodaj = new System.Windows.Forms.Button();
             this.labelWiek = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@
             // 
             // groupBoxUzytkownik
             // 
+            this.groupBoxUzytkownik.Controls.Add(this.buttonUsun);
             this.groupBoxUzytkownik.Controls.Add(this.listBox1);
             this.groupBoxUzytkownik.Controls.Add(this.buttonDodaj);
             this.groupBoxUzytkownik.Controls.Add(this.labelWiek);
@@ -60,6 +62,16 @@
             this.groupBoxUzytkownik.TabIndex = 0;
             this.groupBoxUzytkownik.TabStop = false;
             this.groupBoxUzytkownik.Text = "Użytkownik";
+            // 
+            // buttonUsun
+            // 
+            this.buttonUsun.Location = new System.Drawing.Point(73, 137);
+            this.buttonUsun.Name = "buttonUsun";
+            this.buttonUsun.Size = new System.Drawing.Size(100, 23);
+            this.buttonUsun.TabIndex = 8;
+            this.buttonUsun.Text = "Usuń";
+            this.buttonUsun.UseVisualStyleBackColor = true;
+            this.buttonUsun.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonUsun_Click);
             // 
             // listBox1
             // 
@@ -180,6 +192,7 @@
         private System.Windows.Forms.TextBox textBoxImie;
         private System.Windows.Forms.Label labelImie;
         private System.Windows.Forms.ErrorProvider errorProviderPolTekstowych;
+        private System.Windows.Forms.Button buttonUsun;
     }
 }
 

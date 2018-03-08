@@ -53,6 +53,14 @@ namespace Lab2
                 return true;
             }
         }
+
+        private void UsunUzytkownikaZListy()
+        {
+            string zaznaczenie = listBox1.SelectedItem.ToString();
+            if (zaznaczenie != "")
+                listBox1.Items.Remove(zaznaczenie);
+            
+        }
         #endregion
 
         private void buttonDodaj_Click(object sender, EventArgs e)
@@ -64,6 +72,11 @@ namespace Lab2
                 DodajUzytkownikaDoListy(uzytkownik);
                 uzytkownik = "";
             }
+        }
+
+        private void buttonUsun_Click(object sender, MouseEventArgs e)
+        {
+            UsunUzytkownikaZListy();
         }
 
         private void textBoxImie_KeyPress(object sender, KeyPressEventArgs e)
@@ -92,5 +105,6 @@ namespace Lab2
                 buttonDodaj_Click(sender, e);
             }
         }
+
     }
 }

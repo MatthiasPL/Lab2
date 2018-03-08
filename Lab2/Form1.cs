@@ -20,6 +20,10 @@ namespace Lab2
         }
 
         #region MojeMetody
+        private bool zaladuj()
+        {
+            return true;
+        }
         //Obsługa błędów- niewypełnione pole
         private bool CzyPoleWypelnione(TextBox poleTekstowe)
         {
@@ -42,7 +46,21 @@ namespace Lab2
         {
             if (listBox1.Items.Contains(uzytkownik))
             {
-                //zaimplementować 
+                MessageBoxButtons przyciski = MessageBoxButtons.YesNo;
+                DialogResult wynik;
+
+                string wiadomosc = "Czy chcesz wyczyścić formularz?";
+                string podpis = "Użytkownik już istnieje.";
+
+                wynik = MessageBox.Show(this, wiadomosc, podpis, przyciski,
+                MessageBoxIcon.Question, MessageBoxDefaultButton.Button1,
+                MessageBoxOptions.RightAlign);
+
+                if (wynik == DialogResult.Yes)
+                {
+                    CzyscFormularz();
+                }
+
                 return false;
             }
             else
@@ -53,12 +71,48 @@ namespace Lab2
                 return true;
             }
         }
+        private bool EdytujUzytkownika(string uzytkownik)
+        {
+            if (listBox1.SelectedIndex != -1 && !listBox1.Items.Contains(uzytkownik))
+            {
+                int indeks = listBox1.SelectedIndex;
+                listBox1.Items.RemoveAt(indeks);
+                listBox1.Items.Add(uzytkownik);
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
 
         private void UsunUzytkownikaZListy()
         {
-            string zaznaczenie = listBox1.SelectedItem.ToString();
-            if (zaznaczenie != "")
-                listBox1.Items.Remove(zaznaczenie);
+            if (listBox1.SelectedIndex!=-1)
+            {
+                string zaznaczenie = listBox1.SelectedItem.ToString();
+
+                MessageBoxButtons przyciski = MessageBoxButtons.YesNo;
+                DialogResult wynik;
+
+                string wiadomosc = "Czy chcesz wyczyścić formularz?";
+                string podpis = "Użytkownik już istnieje.";
+
+                wynik = MessageBox.Show(this, wiadomosc, podpis, przyciski,
+                MessageBoxIcon.Question, MessageBoxDefaultButton.Button1,
+                MessageBoxOptions.RightAlign);
+
+                if (wynik == DialogResult.Yes)
+                {
+                    if (zaznaczenie != "")
+                    {
+                        listBox1.Items.Remove(zaznaczenie);
+                    }
+                    textBoxImie.Focus();
+                }
+            }
             
         }
         #endregion
@@ -70,6 +124,16 @@ namespace Lab2
             {
                 uzytkownik = textBoxImie.Text + " " + textBoxNazwisko.Text + " " + numericUpDownWiek.Value;
                 DodajUzytkownikaDoListy(uzytkownik);
+                uzytkownik = "";
+            }
+        }
+
+        private void buttonEdytuj_Click(object sender, EventArgs e)
+        {
+            if (CzyPoleWypelnione(textBoxImie) & CzyPoleWypelnione(textBoxNazwisko))
+            {
+                uzytkownik = textBoxImie.Text + " " + textBoxNazwisko.Text + " " + numericUpDownWiek.Value;
+                EdytujUzytkownika(uzytkownik);
                 uzytkownik = "";
             }
         }
@@ -106,5 +170,24 @@ namespace Lab2
             }
         }
 
+        private void buttonZapis_Click(object sender, EventArgs e)
+        {
+            const string sPath = "save.txt";
+
+            System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(sPath, append: true);
+            foreach (var item in listBox1.Items)
+            {
+                SaveFile.WriteLine(item);
+            }
+
+            SaveFile.Close();
+
+            MessageBox.Show("Dane zapisane!");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            zaladuj();
+        }
     }
 }

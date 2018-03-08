@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBoxUzytkownik = new System.Windows.Forms.GroupBox();
+            this.buttonZapis = new System.Windows.Forms.Button();
+            this.buttonEdytuj = new System.Windows.Forms.Button();
             this.buttonUsun = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.buttonDodaj = new System.Windows.Forms.Button();
@@ -47,6 +49,8 @@
             // 
             // groupBoxUzytkownik
             // 
+            this.groupBoxUzytkownik.Controls.Add(this.buttonZapis);
+            this.groupBoxUzytkownik.Controls.Add(this.buttonEdytuj);
             this.groupBoxUzytkownik.Controls.Add(this.buttonUsun);
             this.groupBoxUzytkownik.Controls.Add(this.listBox1);
             this.groupBoxUzytkownik.Controls.Add(this.buttonDodaj);
@@ -63,9 +67,29 @@
             this.groupBoxUzytkownik.TabStop = false;
             this.groupBoxUzytkownik.Text = "Użytkownik";
             // 
+            // buttonZapis
+            // 
+            this.buttonZapis.Location = new System.Drawing.Point(73, 195);
+            this.buttonZapis.Name = "buttonZapis";
+            this.buttonZapis.Size = new System.Drawing.Size(100, 23);
+            this.buttonZapis.TabIndex = 10;
+            this.buttonZapis.Text = "Zapisz";
+            this.buttonZapis.UseVisualStyleBackColor = true;
+            this.buttonZapis.Click += new System.EventHandler(this.buttonZapis_Click);
+            // 
+            // buttonEdytuj
+            // 
+            this.buttonEdytuj.Location = new System.Drawing.Point(73, 137);
+            this.buttonEdytuj.Name = "buttonEdytuj";
+            this.buttonEdytuj.Size = new System.Drawing.Size(100, 23);
+            this.buttonEdytuj.TabIndex = 9;
+            this.buttonEdytuj.Text = "Edytuj";
+            this.buttonEdytuj.UseVisualStyleBackColor = true;
+            this.buttonEdytuj.Click += new System.EventHandler(this.buttonEdytuj_Click);
+            // 
             // buttonUsun
             // 
-            this.buttonUsun.Location = new System.Drawing.Point(73, 137);
+            this.buttonUsun.Location = new System.Drawing.Point(73, 166);
             this.buttonUsun.Name = "buttonUsun";
             this.buttonUsun.Size = new System.Drawing.Size(100, 23);
             this.buttonUsun.TabIndex = 8;
@@ -172,6 +196,7 @@
             this.Controls.Add(this.groupBoxUzytkownik);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBoxUzytkownik.ResumeLayout(false);
             this.groupBoxUzytkownik.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWiek)).EndInit();
@@ -193,6 +218,8 @@
         private System.Windows.Forms.Label labelImie;
         private System.Windows.Forms.ErrorProvider errorProviderPolTekstowych;
         private System.Windows.Forms.Button buttonUsun;
+        private System.Windows.Forms.Button buttonEdytuj;
+        private System.Windows.Forms.Button buttonZapis;
     }
 }
 

@@ -22,6 +22,7 @@ namespace Lab2
         #region MojeMetody
         private bool zaladuj()
         {
+            //zaimplementować
             return true;
         }
         //Obsługa błędów- niewypełnione pole

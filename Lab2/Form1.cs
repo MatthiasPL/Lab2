@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -22,7 +23,16 @@ namespace Lab2
         #region MojeMetody
         private bool zaladuj()
         {
-            //zaimplementować
+            if (File.Exists("save.txt")) {
+
+                string line;
+                var file = new System.IO.StreamReader("save.txt");
+
+                while ((line = file.ReadLine()) != null)
+                {
+                    listBox1.Items.Add(line);
+                }
+            }
             return true;
         }
         //Obsługa błędów- niewypełnione pole
@@ -175,7 +185,7 @@ namespace Lab2
         {
             const string sPath = "save.txt";
 
-            System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(sPath, append: true);
+            System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(sPath);
             foreach (var item in listBox1.Items)
             {
                 SaveFile.WriteLine(item);

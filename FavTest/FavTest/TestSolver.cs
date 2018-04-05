@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FavTest
 {
-    public partial class Form1 : Form
+    public partial class TestSolver : Form
     {
-        public Form1()
+        public TestSolver()
         {
             InitializeComponent();
         }

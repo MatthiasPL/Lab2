@@ -1,6 +1,6 @@
 ﻿namespace FavTest
 {
-    partial class Form1
+    partial class TestGenerator
     {
         /// <summary>
         /// Required designer variable.

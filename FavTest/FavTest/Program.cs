@@ -14,6 +14,7 @@ namespace FavTest
         [STAThread]
         static void Main()
         {
+            int x = 1;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

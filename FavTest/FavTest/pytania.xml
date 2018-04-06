@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pytania>
+<pytanie>
+	<id_pytania>1</id_pytania>
+	<tresc_pytania>Pytanie nr 1</trescpytania>
+	<poprawna_odpowiedz></poprawna_odpowiedz>
+</pytanie>
+<pytanie>
+	<id_pytania></id_pytania>
+	<tresc_pytania></tresc_pytania>
+</pytanie>
+</pytania>

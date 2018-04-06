@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace FavTest
 {
-    public class Presenter
+    public class Answer
     {
-        public Presenter(Model model, MenuForm menuform)
-        {
-            
-        }
+        public string answertext { get; set; }
+        public bool isValid { get; set; }
     }
 }

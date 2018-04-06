@@ -16,7 +16,12 @@ namespace FavTest
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuForm());
+
+            MenuForm menuform = new MenuForm();
+            Model model = new Model();
+
+            Presenter presenter = new Presenter(model, menuform);
+            Application.Run(menuform);
         }
     }
 }

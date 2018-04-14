@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FavTest
+namespace FavTest.Presenters
 {
-    public class Presenter
+    public class MenuFormPresenter
     {
-        public Presenter(Model model, MenuForm menuform)
-        {
-            
-        }
     }
 }

@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FavTest
+namespace FavTest.Views
 {
-    public class Answer
+    interface IMenuForm
     {
-        public string answertext { get; set; }
-        public bool isValid { get; set; }
     }
 }

@@ -5,31 +5,54 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using FavTest.Models;
 
 namespace FavTest
 {
     public class Model
     {
-        public Model()
-        {
-            Question question = new Question();
-            question.questionText = "Pytanie 1";
-            question.answers = new List<Answer>
-            {
-                new Answer
-                {
-                    answertext="Odp1",
-                    isValid = false
-                },
-                new Answer
-                {
-                    answertext="Odp2",
-                    isValid=true
-                }
-            };
+        public Model() {
 
-            XmlSerializer serializer = new XmlSerializer(typeof(Question));
-            serializer.Serialize(File.Create("file.xml"), question);
+            /*Test test = null;
+            string path = "file.xml";
+
+            XmlSerializer serializer = new XmlSerializer(typeof(Test));
+
+            StreamReader reader = new StreamReader(path);
+            test = (Test)serializer.Deserialize(reader);
+            reader.Close();
+
+            Console.WriteLine(test.Questions[0].QuestionText);
+            */
+
+            /*Test test = new Test();
+
+            List<Question> questions = new List<Question>();
+
+                for (int i = 0; i < 10; i++)
+                {
+                    Question question = new Question();
+                    question.QuestionText = "Pytanie " + (i+1);
+                    question.Answers = new List<Answer>
+                    {
+                        new Answer
+                        {
+                            AnswerText="Odp1",
+                            IsValid = false
+                        },
+                        new Answer
+                        {
+                            AnswerText="Odp2",
+                            IsValid=true
+                        }
+                    };
+                    questions.Add(question);
+                    test.Questions = questions;
+                }
+
+                XmlSerializer serializer = new XmlSerializer(typeof(Test));
+                serializer.Serialize(File.Create("file.xml"), test);
+                */
         }
     }
 }

@@ -20,7 +20,7 @@ namespace FavTest
             MenuForm menuform = new MenuForm();
             Model model = new Model();
 
-            Presenter presenter = new Presenter(model, menuform);
+            //Presenter presenter = new Presenter(model, menuform);
             Application.Run(menuform);
         }
     }

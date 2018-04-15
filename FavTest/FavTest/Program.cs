@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FavTest.Models;
+using FavTest.Presenters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,6 +21,7 @@ namespace FavTest
 
             MenuForm menuform = new MenuForm();
             Model model = new Model();
+            MenuFormPresenter presenter = new MenuFormPresenter(model, menuform);
 
             //Presenter presenter = new Presenter(model, menuform);
             Application.Run(menuform);

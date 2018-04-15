@@ -53,7 +53,8 @@
     <Compile Include="MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model.cs" />
+    <Compile Include="xxx.cs" />
+    <Compile Include="Models\Model.cs" />
     <Compile Include="Models\Test.cs" />
     <Compile Include="Presenters\MenuFormPresenter.cs" />
     <Compile Include="Program.cs" />

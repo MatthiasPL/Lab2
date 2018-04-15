@@ -9,9 +9,9 @@ using FavTest.Models;
 
 namespace FavTest
 {
-    public class Model
+    public class xxx
     {
-        public Model() {
+        public xxx() {
 
             /*Test test = null;
             string path = "file.xml";

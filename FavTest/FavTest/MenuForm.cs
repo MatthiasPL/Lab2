@@ -26,7 +26,7 @@ namespace FavTest
         {
             get
             {
-                return textOdpowiedz.ToString();
+                return textOdpowiedz.Text;
             }
 
             set
@@ -39,7 +39,7 @@ namespace FavTest
         {
             get
             {
-                return textPytanie.ToString();
+                return textPytanie.Text;
             }
 
             set
@@ -53,7 +53,6 @@ namespace FavTest
             {
                 return ListaPytan;
             }
-
             set
             {
                 if (value != null)
@@ -82,7 +81,6 @@ namespace FavTest
             {
                 return ListaOdpowiedzi;
             }
-
             set
             {
                 if (value != null)
@@ -100,9 +98,16 @@ namespace FavTest
 
         public event Action<object, EventArgs> VEventOnLoad;
         public event Action<object, EventArgs> VEventOnSelect;
+        public event Action<object, EventArgs> VEventOnSave;
+        public event Action<object, EventArgs> VEventOnEdit;
+        public event Action<object, EventArgs> VEventOnDelete;
         #endregion
 
         #region Functions
+        public void OdswiezListe()
+        {
+            listPytania.Items.Clear();
+        }
         public void DodajOdpowiedz(string odp, bool isValid)
         {
             checkedListOdpowiedzi.Items.Add(odp, isValid);
@@ -110,6 +115,28 @@ namespace FavTest
         public void UsunOdpowiedzi()
         {
             checkedListOdpowiedzi.Items.Clear();
+            textPytanie.Clear();
+            textOdpowiedz.Clear();
+            
+        }
+        public List<string> ZwrocOdpowiedzi()
+        {
+            List<string> odpowiedzi = new List<string>();
+            foreach(var item in checkedListOdpowiedzi.Items)
+            {
+                odpowiedzi.Add(item.ToString());
+            }
+            return odpowiedzi;
+        }
+        public List<int> ZwrocListeIdPoprawnychOdpowiedzi()
+        {
+            List<int> listaPoprawnosci = new List<int>();
+            foreach(int indexChecked in checkedListOdpowiedzi.CheckedIndices)
+            {
+                listaPoprawnosci.Add(indexChecked);
+                //Console.WriteLine(indexChecked);
+            }
+            return listaPoprawnosci;
         }
         #endregion
 
@@ -126,6 +153,30 @@ namespace FavTest
             if (VEventOnLoad != null)
             {
                 VEventOnSelect(sender, e);
+            }
+        }
+
+        private void buttonZapiszTest_Click(object sender, EventArgs e)
+        {
+            if (VEventOnSave != null)
+            {
+                VEventOnSave(sender, e);
+            }
+        }
+
+        private void buttonEdytujPytanie_Click(object sender, EventArgs e)
+        {
+            if (VEventOnEdit != null)
+            {
+                VEventOnEdit(sender, e);
+            }
+        }
+
+        private void buttonUsunPytanie_Click(object sender, EventArgs e)
+        {
+            if (VEventOnDelete != null)
+            {
+                VEventOnDelete(sender, e);
             }
         }
     }

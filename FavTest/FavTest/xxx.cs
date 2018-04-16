@@ -25,7 +25,7 @@ namespace FavTest
             Console.WriteLine(test.Questions[0].QuestionText);
             */
 
-            /*Test test = new Test();
+            Test test = new Test();
 
             List<Question> questions = new List<Question>();
 
@@ -52,7 +52,7 @@ namespace FavTest
 
                 XmlSerializer serializer = new XmlSerializer(typeof(Test));
                 serializer.Serialize(File.Create("file.xml"), test);
-                */
+                
         }
     }
 }

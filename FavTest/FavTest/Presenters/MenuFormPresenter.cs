@@ -21,6 +21,9 @@ namespace FavTest.Presenters
 
             menuform.VEventOnLoad += View_VEventOnLoad;
             menuform.VEventOnSelect += View_VEventOnSelect;
+            menuform.VEventOnSave += View_VEventOnSave;
+            menuform.VEventOnEdit += View_VEventOnEdit;
+            menuform.VEventOnDelete += View_VEventOnDelete;
         }
 
         private void View_VEventOnLoad(object arg1, EventArgs arg2)
@@ -58,11 +61,59 @@ namespace FavTest.Presenters
                 if (answer.IsValid)
                 {
                     poprawne.Add(i);
-                    Console.WriteLine(i);
                 }
                 i++;
                 menuform.DodajOdpowiedz(answer.AnswerText, answer.IsValid);
             }
         }
+        private void View_VEventOnSave(object arg1, EventArgs arg2)
+        {
+            Test test = menuform.test;
+            XmlSerializer serializer = new XmlSerializer(typeof(Test));
+            serializer.Serialize(File.Create("file.xml"), test);
+            Console.WriteLine("Powodzenie");
+        }
+        private void View_VEventOnEdit(object arg1, EventArgs arg2)
+        {
+            menuform.test.Questions[menuform.IdCurrentPytanie].QuestionText = menuform.TextPytanie;
+            List<string> odpowiedzi = menuform.ZwrocOdpowiedzi();
+            for(int i = 0; i < odpowiedzi.Count; i++)
+            {
+                Console.WriteLine(odpowiedzi[i]);
+            }
+            List<Answer> answers = new List<Answer>();
+            List<int> poprawneId = menuform.ZwrocListeIdPoprawnychOdpowiedzi();
+            
+            for(int i=0; i<odpowiedzi.Count; i++)
+            {
+                Answer answer = new Answer();
+                answer.AnswerText = odpowiedzi[i];
+                if (poprawneId.Contains(i))
+                {
+                    answer.IsValid = true;
+                }
+                else
+                {
+                    answer.IsValid = false;
+                }
+                answers.Add(answer);
+            }
+            menuform.test.Questions[menuform.IdCurrentPytanie].Answers = answers;
+        }
+        private void View_VEventOnDelete(object arg1, EventArgs arg2)
+        {
+            menuform.test.Questions.Remove(menuform.test.Questions.ElementAt(menuform.IdCurrentPytanie));
+            menuform.OdswiezListe();
+            menuform.UsunOdpowiedzi();
+            List<string> lista = new List<string>();
+            foreach (Question question in menuform.test.Questions)
+            {
+                lista.Add(question.QuestionText);
+            }
+            menuform.ListaPytan = lista.ToArray();
+        }
     }
 }
+
+//To-Do:
+//Funkcje tj.: usun pytanie, ladowanie pytan, ladowanie zawartosci

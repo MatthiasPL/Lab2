@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.buttonZapiszTest = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonNowePytanie = new System.Windows.Forms.Button();
             this.listPytania = new System.Windows.Forms.ListBox();
             this.buttonUsunPytanie = new System.Windows.Forms.Button();
             this.buttonUsunOdpowiedz = new System.Windows.Forms.Button();
-            this.buttonDodajPytanie = new System.Windows.Forms.Button();
+            this.buttonEdytujPytanie = new System.Windows.Forms.Button();
             this.buttonDodajOdpowiedz = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textOdpowiedz = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textPytanie = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonZapiszTest = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -66,7 +66,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.buttonUsunPytanie);
             this.splitContainer1.Panel2.Controls.Add(this.buttonUsunOdpowiedz);
-            this.splitContainer1.Panel2.Controls.Add(this.buttonDodajPytanie);
+            this.splitContainer1.Panel2.Controls.Add(this.buttonEdytujPytanie);
             this.splitContainer1.Panel2.Controls.Add(this.buttonDodajOdpowiedz);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.textOdpowiedz);
@@ -77,6 +77,16 @@
             this.splitContainer1.Size = new System.Drawing.Size(784, 450);
             this.splitContainer1.SplitterDistance = 210;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // buttonZapiszTest
+            // 
+            this.buttonZapiszTest.Location = new System.Drawing.Point(3, 411);
+            this.buttonZapiszTest.Name = "buttonZapiszTest";
+            this.buttonZapiszTest.Size = new System.Drawing.Size(103, 36);
+            this.buttonZapiszTest.TabIndex = 3;
+            this.buttonZapiszTest.Text = "Zapisz test";
+            this.buttonZapiszTest.UseVisualStyleBackColor = true;
+            this.buttonZapiszTest.Click += new System.EventHandler(this.buttonZapiszTest_Click);
             // 
             // label4
             // 
@@ -113,6 +123,7 @@
             this.buttonUsunPytanie.TabIndex = 9;
             this.buttonUsunPytanie.Text = "Usuń pytanie";
             this.buttonUsunPytanie.UseVisualStyleBackColor = true;
+            this.buttonUsunPytanie.Click += new System.EventHandler(this.buttonUsunPytanie_Click);
             // 
             // buttonUsunOdpowiedz
             // 
@@ -123,14 +134,15 @@
             this.buttonUsunOdpowiedz.Text = "Usuń odpowiedź";
             this.buttonUsunOdpowiedz.UseVisualStyleBackColor = true;
             // 
-            // buttonDodajPytanie
+            // buttonEdytujPytanie
             // 
-            this.buttonDodajPytanie.Location = new System.Drawing.Point(393, 411);
-            this.buttonDodajPytanie.Name = "buttonDodajPytanie";
-            this.buttonDodajPytanie.Size = new System.Drawing.Size(174, 36);
-            this.buttonDodajPytanie.TabIndex = 7;
-            this.buttonDodajPytanie.Text = "Dodaj pytanie";
-            this.buttonDodajPytanie.UseVisualStyleBackColor = true;
+            this.buttonEdytujPytanie.Location = new System.Drawing.Point(393, 411);
+            this.buttonEdytujPytanie.Name = "buttonEdytujPytanie";
+            this.buttonEdytujPytanie.Size = new System.Drawing.Size(174, 36);
+            this.buttonEdytujPytanie.TabIndex = 7;
+            this.buttonEdytujPytanie.Text = "Edytuj pytanie";
+            this.buttonEdytujPytanie.UseVisualStyleBackColor = true;
+            this.buttonEdytujPytanie.Click += new System.EventHandler(this.buttonEdytujPytanie_Click);
             // 
             // buttonDodajOdpowiedz
             // 
@@ -192,15 +204,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Treść pytania:";
             // 
-            // buttonZapiszTest
-            // 
-            this.buttonZapiszTest.Location = new System.Drawing.Point(3, 411);
-            this.buttonZapiszTest.Name = "buttonZapiszTest";
-            this.buttonZapiszTest.Size = new System.Drawing.Size(103, 36);
-            this.buttonZapiszTest.TabIndex = 3;
-            this.buttonZapiszTest.Text = "Zapisz test";
-            this.buttonZapiszTest.UseVisualStyleBackColor = true;
-            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,7 +229,7 @@
         private System.Windows.Forms.ListBox listPytania;
         private System.Windows.Forms.TextBox textPytanie;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonDodajPytanie;
+        private System.Windows.Forms.Button buttonEdytujPytanie;
         private System.Windows.Forms.Button buttonDodajOdpowiedz;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textOdpowiedz;

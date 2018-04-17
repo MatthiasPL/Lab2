@@ -101,6 +101,7 @@ namespace FavTest
         public event Action<object, EventArgs> VEventOnSave;
         public event Action<object, EventArgs> VEventOnEdit;
         public event Action<object, EventArgs> VEventOnDelete;
+        public event Action<object, EventArgs> VEventOnNewAnswer;
         #endregion
 
         #region Functions
@@ -117,7 +118,6 @@ namespace FavTest
             checkedListOdpowiedzi.Items.Clear();
             textPytanie.Clear();
             textOdpowiedz.Clear();
-            
         }
         public List<string> ZwrocOdpowiedzi()
         {
@@ -177,6 +177,14 @@ namespace FavTest
             if (VEventOnDelete != null)
             {
                 VEventOnDelete(sender, e);
+            }
+        }
+
+        private void buttonDodajOdpowiedz_Click(object sender, EventArgs e)
+        {
+            if (VEventOnNewAnswer != null)
+            {
+                VEventOnNewAnswer(sender, e);
             }
         }
     }

@@ -14,6 +14,7 @@ namespace FavTest.Views
         event Action<object, EventArgs> VEventOnSave;
         event Action<object, EventArgs> VEventOnEdit;
         event Action<object, EventArgs> VEventOnDelete;
+        event Action<object, EventArgs> VEventOnNewAnswer;
         string TextPytanie { get; set; }
         string TextOdpowiedz { get; set; }
         string[] ListaPytan { get; set; }

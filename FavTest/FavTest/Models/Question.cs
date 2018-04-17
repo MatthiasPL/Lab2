@@ -15,6 +15,11 @@ namespace FavTest
         //    Answers = answers;
         //}
         public Question() { }
+        public Question(string questiontext, List<Answer> answers)
+        {
+            this.QuestionText = questiontext;
+            this.Answers = answers;
+        }
         public string QuestionText { get; set; }
         [XmlArray("Answers")]
         [XmlArrayItem("Answer")]

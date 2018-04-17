@@ -117,9 +117,9 @@
             // 
             // buttonUsunPytanie
             // 
-            this.buttonUsunPytanie.Location = new System.Drawing.Point(220, 411);
+            this.buttonUsunPytanie.Location = new System.Drawing.Point(3, 411);
             this.buttonUsunPytanie.Name = "buttonUsunPytanie";
-            this.buttonUsunPytanie.Size = new System.Drawing.Size(167, 36);
+            this.buttonUsunPytanie.Size = new System.Drawing.Size(102, 36);
             this.buttonUsunPytanie.TabIndex = 9;
             this.buttonUsunPytanie.Text = "Usuń pytanie";
             this.buttonUsunPytanie.UseVisualStyleBackColor = true;
@@ -127,18 +127,18 @@
             // 
             // buttonUsunOdpowiedz
             // 
-            this.buttonUsunOdpowiedz.Location = new System.Drawing.Point(108, 411);
+            this.buttonUsunOdpowiedz.Location = new System.Drawing.Point(400, 411);
             this.buttonUsunOdpowiedz.Name = "buttonUsunOdpowiedz";
-            this.buttonUsunOdpowiedz.Size = new System.Drawing.Size(106, 36);
+            this.buttonUsunOdpowiedz.Size = new System.Drawing.Size(167, 36);
             this.buttonUsunOdpowiedz.TabIndex = 8;
             this.buttonUsunOdpowiedz.Text = "Usuń odpowiedź";
             this.buttonUsunOdpowiedz.UseVisualStyleBackColor = true;
             // 
             // buttonEdytujPytanie
             // 
-            this.buttonEdytujPytanie.Location = new System.Drawing.Point(393, 411);
+            this.buttonEdytujPytanie.Location = new System.Drawing.Point(111, 411);
             this.buttonEdytujPytanie.Name = "buttonEdytujPytanie";
-            this.buttonEdytujPytanie.Size = new System.Drawing.Size(174, 36);
+            this.buttonEdytujPytanie.Size = new System.Drawing.Size(103, 36);
             this.buttonEdytujPytanie.TabIndex = 7;
             this.buttonEdytujPytanie.Text = "Edytuj pytanie";
             this.buttonEdytujPytanie.UseVisualStyleBackColor = true;
@@ -146,12 +146,13 @@
             // 
             // buttonDodajOdpowiedz
             // 
-            this.buttonDodajOdpowiedz.Location = new System.Drawing.Point(3, 411);
+            this.buttonDodajOdpowiedz.Location = new System.Drawing.Point(220, 411);
             this.buttonDodajOdpowiedz.Name = "buttonDodajOdpowiedz";
-            this.buttonDodajOdpowiedz.Size = new System.Drawing.Size(99, 36);
+            this.buttonDodajOdpowiedz.Size = new System.Drawing.Size(174, 36);
             this.buttonDodajOdpowiedz.TabIndex = 6;
             this.buttonDodajOdpowiedz.Text = "Dodaj odpowiedź";
             this.buttonDodajOdpowiedz.UseVisualStyleBackColor = true;
+            this.buttonDodajOdpowiedz.Click += new System.EventHandler(this.buttonDodajOdpowiedz_Click);
             // 
             // label3
             // 

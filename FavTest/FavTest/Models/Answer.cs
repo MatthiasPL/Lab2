@@ -15,6 +15,11 @@ namespace FavTest
         //    IsValid = isvalid;
         //}
         public Answer() {}
+        public Answer(string answertext, bool isvalid)
+        {
+            this.AnswerText = answertext;
+            this.IsValid = isvalid;
+        }
         [XmlAttribute("AnswerText")]
         public string AnswerText { get; set; }
         [XmlAttribute("IsValid")]

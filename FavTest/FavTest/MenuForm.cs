@@ -22,6 +22,7 @@ namespace FavTest
         }
 
         #region Interface
+        int prevPytanie;
         public string TextOdpowiedz
         {
             get
@@ -69,11 +70,11 @@ namespace FavTest
             {
                 return listPytania.SelectedIndex;
             }
-
             set
             {
                 listPytania.SelectedIndex = value;
             }
+
         }
         public string[] ListaOdpowiedzi
         {
@@ -90,6 +91,29 @@ namespace FavTest
                 }
             }
         }
+        public int IdCurrentOdpowiedz
+        {
+            get
+            {
+                return checkedListOdpowiedzi.SelectedIndex;
+            }
+            set
+            {
+                IdCurrentPytanie = value;
+            }
+        }
+        public int IdPreviousPytanie
+        {
+            get
+            {
+                return prevPytanie;
+            }
+
+            set
+            {
+                prevPytanie = value;
+            }
+        }
 
         public Answer NewAnswer { get; set; }
 
@@ -102,6 +126,8 @@ namespace FavTest
         public event Action<object, EventArgs> VEventOnEdit;
         public event Action<object, EventArgs> VEventOnDelete;
         public event Action<object, EventArgs> VEventOnNewAnswer;
+        public event Action<object, EventArgs> VEventOnAnswerDelete;
+        public event Action<object, EventArgs> VEventOnLostQuestionFocus;
         #endregion
 
         #region Functions
@@ -137,6 +163,20 @@ namespace FavTest
                 //Console.WriteLine(indexChecked);
             }
             return listaPoprawnosci;
+        }
+        public void ZaladujOdpowiedzi()
+        {
+            checkedListOdpowiedzi.Items.Clear();
+            foreach(var item in test.Questions[IdCurrentPytanie].Answers)
+            {
+                DodajOdpowiedz(item.AnswerText, item.IsValid);
+            }
+        }
+        public void SetQuestionFocus()
+        {
+            listPytania.Focus();
+            listPytania.SelectedIndex = IdPreviousPytanie;
+            //listPytania.
         }
         #endregion
 
@@ -185,6 +225,21 @@ namespace FavTest
             if (VEventOnNewAnswer != null)
             {
                 VEventOnNewAnswer(sender, e);
+            }
+        }
+        private void buttonUsunOdpowiedz_Click(object sender, EventArgs e)
+        {
+            if (VEventOnAnswerDelete != null)
+            {
+                VEventOnAnswerDelete(sender, e);
+            }
+        }
+
+        private void listPytania_Leave(object sender, EventArgs e)
+        {
+            if (VEventOnLostQuestionFocus != null)
+            {
+                VEventOnLostQuestionFocus(sender, e);
             }
         }
     }

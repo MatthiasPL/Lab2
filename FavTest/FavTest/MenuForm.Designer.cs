@@ -114,6 +114,7 @@
             this.listPytania.Size = new System.Drawing.Size(204, 381);
             this.listPytania.TabIndex = 0;
             this.listPytania.SelectedIndexChanged += new System.EventHandler(this.listPytania_SelectedIndexChanged);
+            this.listPytania.Leave += new System.EventHandler(this.listPytania_Leave);
             // 
             // buttonUsunPytanie
             // 
@@ -133,6 +134,7 @@
             this.buttonUsunOdpowiedz.TabIndex = 8;
             this.buttonUsunOdpowiedz.Text = "Usuń odpowiedź";
             this.buttonUsunOdpowiedz.UseVisualStyleBackColor = true;
+            this.buttonUsunOdpowiedz.Click += new System.EventHandler(this.buttonUsunOdpowiedz_Click);
             // 
             // buttonEdytujPytanie
             // 

@@ -25,6 +25,9 @@ namespace FavTest.Presenters
             menuform.VEventOnSave += View_VEventOnSave;
             menuform.VEventOnEdit += View_VEventOnEdit;
             menuform.VEventOnDelete += View_VEventOnDelete;
+            menuform.VEventOnNewAnswer += View_VEventOnNewAnswer;
+            menuform.VEventOnAnswerDelete += View_VEventOnAnswerDelete;
+            menuform.VEventOnLostQuestionFocus += View_VEventOnLostQuestionFocus;
         }
 
         private void View_VEventOnLoad(object arg1, EventArgs arg2)
@@ -40,6 +43,7 @@ namespace FavTest.Presenters
         }
         private void View_VEventOnSelect(object arg1, EventArgs arg2)
         {
+            menuform.IdPreviousPytanie = menuform.IdCurrentPytanie;
             menuform.UsunOdpowiedzi();
             menuform.TextPytanie = menuform.test.Questions[menuform.IdCurrentPytanie].QuestionText;
             List<string> odpowiedzi=new List<string>();
@@ -92,6 +96,7 @@ namespace FavTest.Presenters
                     answers.Add(answer);
                 }
                 menuform.test.Questions[menuform.IdCurrentPytanie].Answers = answers;
+                menuform.SetQuestionFocus();
             }
         }
         private void View_VEventOnDelete(object arg1, EventArgs arg2)
@@ -100,15 +105,30 @@ namespace FavTest.Presenters
             menuform.OdswiezListe();
             menuform.UsunOdpowiedzi();
             menuform.ListaPytan = model.LoadQuestions(menuform.test);
+            menuform.SetQuestionFocus();
         }
         private void View_VEventOnNewAnswer(object arg1, EventArgs arg2)
         {
+            int id = menuform.IdCurrentOdpowiedz;
+            //menuform.SetQuestionFocus();
             Answer answer = model.CreateNewAnswer(menuform.TextOdpowiedz, false);
             menuform.test.Questions[menuform.IdCurrentPytanie].Answers.Add(answer);
             //menuform.OdswiezListe();
             //menuform.UsunOdpowiedzi();
             menuform.DodajOdpowiedz(answer.AnswerText, false);
             menuform.ListaPytan = model.LoadQuestions(menuform.test);
+            menuform.SetQuestionFocus();
+        }
+        private void View_VEventOnAnswerDelete(object arg1, EventArgs arg2)
+        {
+            menuform.test.Questions[menuform.IdCurrentPytanie].Answers.RemoveAt(menuform.IdCurrentOdpowiedz);
+            //menuform.test.Questions[menuform.IdCurrentPytanie].Answers.Remove(menuform.test.Questions[menuform.IdCurrentPytanie].Answers.ElementAt(menuform.IdCurrentOdpowiedz));
+            menuform.ZaladujOdpowiedzi();
+            menuform.SetQuestionFocus();
+        }
+        private void View_VEventOnLostQuestionFocus(object arg1, EventArgs arg2)
+        {
+            //menuform.SetQuestionFocus();
         }
     }
 }

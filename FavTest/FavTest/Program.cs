@@ -21,6 +21,7 @@ namespace FavTest
 
             MenuForm menuform = new MenuForm();
             Model model = new Model();
+            xxx xxx = new xxx();
             MenuFormPresenter presenter = new MenuFormPresenter(model, menuform);
 
             //Presenter presenter = new Presenter(model, menuform);

@@ -128,6 +128,7 @@ namespace FavTest
         public event Action<object, EventArgs> VEventOnNewAnswer;
         public event Action<object, EventArgs> VEventOnAnswerDelete;
         public event Action<object, EventArgs> VEventOnLostQuestionFocus;
+        public event Action<object, EventArgs> CzyNaPewno;
         #endregion
 
         #region Functions
@@ -190,9 +191,11 @@ namespace FavTest
 
         private void listPytania_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             if (VEventOnLoad != null)
             {
                 VEventOnSelect(sender, e);
+                CzyNaPewno(sender, e);
             }
         }
 

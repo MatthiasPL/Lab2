@@ -57,16 +57,16 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.buttonZapiszTest);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonUsunPytanie);
             this.splitContainer1.Panel1.Controls.Add(this.buttonNowePytanie);
             this.splitContainer1.Panel1.Controls.Add(this.listPytania);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonEdytujPytanie);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.buttonUsunPytanie);
+            this.splitContainer1.Panel2.Controls.Add(this.buttonZapiszTest);
             this.splitContainer1.Panel2.Controls.Add(this.buttonUsunOdpowiedz);
-            this.splitContainer1.Panel2.Controls.Add(this.buttonEdytujPytanie);
             this.splitContainer1.Panel2.Controls.Add(this.buttonDodajOdpowiedz);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.textOdpowiedz);
@@ -80,9 +80,9 @@
             // 
             // buttonZapiszTest
             // 
-            this.buttonZapiszTest.Location = new System.Drawing.Point(3, 411);
+            this.buttonZapiszTest.Location = new System.Drawing.Point(220, 366);
             this.buttonZapiszTest.Name = "buttonZapiszTest";
-            this.buttonZapiszTest.Size = new System.Drawing.Size(103, 36);
+            this.buttonZapiszTest.Size = new System.Drawing.Size(347, 81);
             this.buttonZapiszTest.TabIndex = 3;
             this.buttonZapiszTest.Text = "Zapisz test";
             this.buttonZapiszTest.UseVisualStyleBackColor = true;
@@ -99,9 +99,9 @@
             // 
             // buttonNowePytanie
             // 
-            this.buttonNowePytanie.Location = new System.Drawing.Point(112, 411);
+            this.buttonNowePytanie.Location = new System.Drawing.Point(3, 333);
             this.buttonNowePytanie.Name = "buttonNowePytanie";
-            this.buttonNowePytanie.Size = new System.Drawing.Size(95, 36);
+            this.buttonNowePytanie.Size = new System.Drawing.Size(204, 36);
             this.buttonNowePytanie.TabIndex = 1;
             this.buttonNowePytanie.Text = "Nowe pytanie";
             this.buttonNowePytanie.UseVisualStyleBackColor = true;
@@ -111,7 +111,7 @@
             this.listPytania.FormattingEnabled = true;
             this.listPytania.Location = new System.Drawing.Point(3, 24);
             this.listPytania.Name = "listPytania";
-            this.listPytania.Size = new System.Drawing.Size(204, 381);
+            this.listPytania.Size = new System.Drawing.Size(204, 303);
             this.listPytania.TabIndex = 0;
             this.listPytania.SelectedIndexChanged += new System.EventHandler(this.listPytania_SelectedIndexChanged);
             this.listPytania.Leave += new System.EventHandler(this.listPytania_Leave);
@@ -120,7 +120,7 @@
             // 
             this.buttonUsunPytanie.Location = new System.Drawing.Point(3, 411);
             this.buttonUsunPytanie.Name = "buttonUsunPytanie";
-            this.buttonUsunPytanie.Size = new System.Drawing.Size(102, 36);
+            this.buttonUsunPytanie.Size = new System.Drawing.Size(204, 36);
             this.buttonUsunPytanie.TabIndex = 9;
             this.buttonUsunPytanie.Text = "Usuń pytanie";
             this.buttonUsunPytanie.UseVisualStyleBackColor = true;
@@ -128,9 +128,9 @@
             // 
             // buttonUsunOdpowiedz
             // 
-            this.buttonUsunOdpowiedz.Location = new System.Drawing.Point(400, 411);
+            this.buttonUsunOdpowiedz.Location = new System.Drawing.Point(6, 408);
             this.buttonUsunOdpowiedz.Name = "buttonUsunOdpowiedz";
-            this.buttonUsunOdpowiedz.Size = new System.Drawing.Size(167, 36);
+            this.buttonUsunOdpowiedz.Size = new System.Drawing.Size(211, 39);
             this.buttonUsunOdpowiedz.TabIndex = 8;
             this.buttonUsunOdpowiedz.Text = "Usuń odpowiedź";
             this.buttonUsunOdpowiedz.UseVisualStyleBackColor = true;
@@ -138,9 +138,9 @@
             // 
             // buttonEdytujPytanie
             // 
-            this.buttonEdytujPytanie.Location = new System.Drawing.Point(111, 411);
+            this.buttonEdytujPytanie.Location = new System.Drawing.Point(3, 372);
             this.buttonEdytujPytanie.Name = "buttonEdytujPytanie";
-            this.buttonEdytujPytanie.Size = new System.Drawing.Size(103, 36);
+            this.buttonEdytujPytanie.Size = new System.Drawing.Size(204, 36);
             this.buttonEdytujPytanie.TabIndex = 7;
             this.buttonEdytujPytanie.Text = "Edytuj pytanie";
             this.buttonEdytujPytanie.UseVisualStyleBackColor = true;
@@ -148,9 +148,9 @@
             // 
             // buttonDodajOdpowiedz
             // 
-            this.buttonDodajOdpowiedz.Location = new System.Drawing.Point(220, 411);
+            this.buttonDodajOdpowiedz.Location = new System.Drawing.Point(6, 366);
             this.buttonDodajOdpowiedz.Name = "buttonDodajOdpowiedz";
-            this.buttonDodajOdpowiedz.Size = new System.Drawing.Size(174, 36);
+            this.buttonDodajOdpowiedz.Size = new System.Drawing.Size(212, 42);
             this.buttonDodajOdpowiedz.TabIndex = 6;
             this.buttonDodajOdpowiedz.Text = "Dodaj odpowiedź";
             this.buttonDodajOdpowiedz.UseVisualStyleBackColor = true;
@@ -170,7 +170,7 @@
             this.textOdpowiedz.Location = new System.Drawing.Point(3, 129);
             this.textOdpowiedz.Multiline = true;
             this.textOdpowiedz.Name = "textOdpowiedz";
-            this.textOdpowiedz.Size = new System.Drawing.Size(211, 276);
+            this.textOdpowiedz.Size = new System.Drawing.Size(211, 231);
             this.textOdpowiedz.TabIndex = 4;
             // 
             // checkedListOdpowiedzi
@@ -178,7 +178,7 @@
             this.checkedListOdpowiedzi.FormattingEnabled = true;
             this.checkedListOdpowiedzi.Location = new System.Drawing.Point(220, 131);
             this.checkedListOdpowiedzi.Name = "checkedListOdpowiedzi";
-            this.checkedListOdpowiedzi.Size = new System.Drawing.Size(347, 274);
+            this.checkedListOdpowiedzi.Size = new System.Drawing.Size(347, 229);
             this.checkedListOdpowiedzi.TabIndex = 3;
             // 
             // label2
